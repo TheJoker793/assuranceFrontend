@@ -18,7 +18,7 @@
         <td>{{c.prenomPersonne+' '+c.nomPersonne }}</td>
         <td>{{c.email}}</td>
         <td>{{c.login}}</td>
-        <td><button class="btn">modifier</button> <button class="btn">supprimer</button> </td>
+        <td><button class="btn">modifier</button> <button class="btn" (click)="deleteCompte(c)">supprimer</button> </td>
       </tr>
       
       

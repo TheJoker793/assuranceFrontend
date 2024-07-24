@@ -22,6 +22,14 @@ export class ListComptesComponent implements OnInit{
       }
     )
   }
+  deleteCompte(compte:any){
+    this.compteService.deleteCompte(compte.id).subscribe(
+      ()=>{
+        this.refresh()
+      }
+    )
+
+  }
   
 
 }
