@@ -1,0 +1,37 @@
+<h1>Nouveau Client</h1>
+<form (ngSubmit)="addPersonne()" [formGroup]="personneForm">
+    <div class="row mb-3">
+        <div class="col col-md-6">
+            <label class="label">Prénom</label>
+            <input class="form-control" formControlName="prenom">
+        </div>
+        <div class="col col-md-6">
+            <label class="label">Nom</label>
+            <input class="form-control" formControlName="nom">
+        </div>
+
+    </div>
+    <div class="row mb-3">
+        <div class="col col-md-6">
+            <label class="label">Cin</label>
+            <input class="form-control" formControlName="cin">
+        </div>
+        <div class="col col-md-6">
+            <label class="label">Date Naissance</label>
+            <input class="form-control" formControlName="dateNaissance" type="date">
+        </div>
+        
+
+    </div>
+    <div class="row mb-3">
+        <label class="label">Choisir structure</label>
+        <select class="form-select" formControlName="structureId" aria-label="Default select example">
+
+            <option *ngFor="let s of structures" [value]="s.id">{{s.libelle}}</option>
+          </select>
+        
+
+    </div>
+    <button class="btn btn-success" type="submit">Ajouter</button>
+
+</form>

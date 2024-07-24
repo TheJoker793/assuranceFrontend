@@ -1,0 +1,26 @@
+<h1>Liste des comptes</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Numero compte</th>
+        <th scope="col">Nom complet</th>
+        <th scope="col">Email</th>
+        <th scope="col">Login</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of comptes;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{c.numero}}</td>
+        <td>{{c.prenomPersonne+' '+c.nomPersonne }}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.login}}</td>
+        <td><button class="btn">modifier</button> <button class="btn">supprimer</button> </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>

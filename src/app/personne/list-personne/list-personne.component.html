@@ -1,0 +1,26 @@
+<h1>Liste des clients</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Date Naissance</th>
+        <th scope="col">Structure</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of personnes;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.cin}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.dateNaissance|date}}</td>
+        <td>{{p.libelleStructure}}</td>
+        <td><button class="btn" (click)="goUpdate(p)">modifier</button><button class="btn" (click)="deleteClient(p)">supprimer</button></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Nouveau Compte</h1>
+
+    <form class="form-group" [formGroup]="compteForm" (ngSubmit)="addCompte()">
+        <div class="row">
+            <div class="row">
+                <div class="col col-md-6">
+                    <label>Id</label>
+                    <input type="number" class="form-control" id="personneId" (change)="onChangePersonneId($event)">
+                </div>
+            </div>
+
+            <form class="form-group" [formGroup]="perosnneForm">
+
+                <div class="row">
+                    <div class="col col-md-6">
+                        <label>Prénom</label>
+                        <input class="form-control" formControlName="prenom">
+                    </div>
+                    <div class="col col-md-6">
+                        <label>Nom</label>
+                        <input class="form-control" formControlName="nom">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col col-md-6">
+                        <label>Cin</label>
+                        <input class="form-control" formControlName="cin">
+                    </div>
+                    <div class="col col-md-6">
+                        <label>Date de Naissance</label>
+                        <input class="form-control" formControlName="dateNaissance">
+                    </div>
+
+                </div>
+
+            </form>
+            <div class="row">
+                <label>Numero</label>
+                <input class="form-control" formControlName="numero">
+            </div>
+            <div class="row">
+                <label>Email</label>
+                <input class="form-control" formControlName="email">
+            </div>
+            <div class="row">
+                <label>login</label>
+                <input class="form-control" formControlName="login">
+
+
+            </div>
+            <div class="row">
+                <label>Password</label>
+                <input class="form-control" type="password" formControlName="password">
+            </div>
+        </div>
+
+        <button class="btn btn-success mt-3">Ajouter</button>
+    </form>
+
+</div>
