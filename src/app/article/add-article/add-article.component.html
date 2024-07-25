@@ -1,0 +1,18 @@
+<h1>Nouvel article</h1>
+<form class="form-group" [formGroup]="ArticleForm" (ngSubmit)="addArticle()">
+<div class="row">
+    <label>Libelle</label>
+    <input class="form-control" formControlName="libelle">
+</div>
+<div class="row">
+    <label>Reference</label>
+    <input class="form-control" formControlName="reference">
+</div>
+<div class="row">
+    <label>Prix</label>
+    <input class="form-control" formControlName="prix" type="number">
+</div>
+<div class="mt-3">
+<button class="btn btn-success">Ajouter</button>
+</div>
+</form>

@@ -8,12 +8,11 @@ import { AddPersonneComponent } from './add-personne/add-personne.component';
 const routes: Routes = [
   {
     path:'',
-    component:DashboardPersonneComponent,
-    
+    component:DashboardPersonneComponent,   
     children:[
       
       {
-        path:'list',
+        path:'',
         component:ListPersonneComponent,
       },
       {

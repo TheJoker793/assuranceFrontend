@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path:'comptes',
     loadChildren:()=>import('./compte/compte.module').then(c=>c.CompteModule)
+  },
+  {
+    path:'articles',
+    loadChildren:()=>import('./article/article.module').then(a=>a.ArticleModule)
   }
 ];
 

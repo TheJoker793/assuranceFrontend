@@ -1,0 +1,25 @@
+<h1>Liste des articles</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Reference</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{article.libelle}}</td>
+        <td>{{article.reference}}</td>
+        <td>{{article.prix}}</td>
+        <td><button class="btn" (click)="goUpdate(article)">Modifier</button> <button class="btn"(click)="deleteArticle(article)">Supprimer</button></td>
+
+      </tr>
+     
+      
+    </tbody>
+  </table>
