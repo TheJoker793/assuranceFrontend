@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Compte } from '../Compte.model';
 import { CompteService } from '../compteService/compte.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-comptes',
@@ -9,8 +10,8 @@ import { CompteService } from '../compteService/compte.service';
 })
 export class ListComptesComponent implements OnInit{
   comptes:Compte[]=[];
-  constructor(private compteService:CompteService){
-
+  constructor(private compteService:CompteService,private router:Router ){
+    
   }
   ngOnInit(): void {
     this.refresh()
@@ -29,6 +30,9 @@ export class ListComptesComponent implements OnInit{
       }
     )
 
+  }
+  goUpdate(compte:Compte){
+    this.router.navigate(['comptes/update',compte.id])
   }
   
 

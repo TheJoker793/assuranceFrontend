@@ -1,1 +1,52 @@
-<p>update-compte works!</p>
+<div class="container">
+    <h1>Mettre à jour compte</h1>
+
+    <form class="form-group" [formGroup]="compteForm">
+        <div class="row">
+            <div class="row">
+                <div class="col col-md-6">
+                    <label>Id</label>
+                    <input type="number" class="form-control" formControlName="id" >
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col col-md-6">
+                        <label>Prénom</label>
+                        <input class="form-control" formControlName="prenomPersonne">
+                    </div>
+                    <div class="col col-md-6">
+                        <label>Nom</label>
+                        <input class="form-control" formControlName="nomPersonne">
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col col-md-6">
+                        <label>Cin</label>
+                        <input class="form-control" formControlName="cinPersonne">
+                    </div>
+                    <div class="col col-md-6">
+                        <label>Date de Naissance</label>
+                        <input class="form-control" formControlName="dateNaissancePersonne">
+                    </div>
+                </div>
+            
+            <div class="row">
+                <label>Numero</label>
+                <input class="form-control" formControlName="numero">
+            </div>
+            <div class="row">
+                <label>Email</label>
+                <input class="form-control" formControlName="email">
+            </div>
+            <div class="row">
+                <label>login</label>
+                <input class="form-control" formControlName="login">
+            </div>
+            <div class="row">
+                <label>Password</label>
+                <input class="form-control" type="password" formControlName="password">
+            </div>
+        </div>
+        <button class="btn btn-success mt-3">Ajouter</button>
+    </form>
+</div>

@@ -10,4 +10,4 @@ export interface Compte{
     nomPersonne?:string,
     dateNaissancePersonne?:Date
  
-}
+} 
