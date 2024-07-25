@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path:'articles',
     loadChildren:()=>import('./article/article.module').then(a=>a.ArticleModule)
+  },
+  {
+    path:'contrats',
+    loadChildren:()=>import('./contrat/contrat.module').then(c=>c.ContratModule)
+  },
+  {
+    path:'quittancePrimes', 
+    loadChildren:()=>import('./quittanceprime/quittanceprime.module').then(qp=>qp.QuittanceprimeModule)
   }
 ];
 

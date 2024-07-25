@@ -1,0 +1,19 @@
+<h1>Nouveau Quittance prime</h1>
+<form class="form-group" [formGroup]="qpForm" (ngSubmit)="addQp()" >
+    <div>
+        <label>Libelle</label>
+        <input class="form-control" formControlName="libelle">
+    </div>
+    <div>
+        <label>Montant</label>
+        <input class="form-control" formControlName="montant" type="number">
+    </div>
+    <div>
+        <label>Date ajout</label>
+        <input class="form-control" formControlName="dateAjout" type="date">
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-success" type="submit">ajouter </button>
+    </div>
+
+</form>

@@ -1,0 +1,43 @@
+<h1>List des contrats</h1>
+<table class="table">
+    @if (contrats.length==0) {
+        <h1 class="center">Pas de contrat pour le moment</h1>
+    }
+    @else {
+        <thead>
+            <tr>
+              <th scope="col">Ord</th>
+              <th scope="col">Date d'effet</th>
+              <th scope="col">Date d'écheance</th>
+              <th scope="col">Date de signature</th>
+              <th scope="col">Exercice</th>
+              <th scope="col">Nature du contrat</th>
+              <th scope="col">Quittance</th>
+              <th scope="col">Date d'ajout Quittance'</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr *ngFor="let contrat of contrats;let i=index">
+                      <th scope="row">{{i+1}}</th>
+                      <td>{{contrat.dateEffet}}</td>
+                      <td>{{contrat.dateEcheance}}</td>
+                      <td>{{contrat.dateSignature}}</td>
+                      <td>{{contrat.exercice}}</td>
+                      <td>{{contrat.libelleNatureContrat}}</td>
+                      <td>{{contrat.libelleQuittancePrime}}</td>
+                      <td>{{contrat.dateAjoutQuittancePrime}}</td>
+                      <td><button class="btn"(click)="goToUpdate(contrat)">Modifier</button>
+                    <button class="btn"(click)="goToUpdate(contrat)">Supprimer</button>
+                    </td>
+
+
+
+                    </tr>
+              
+            
+            
+          </tbody>
+    }
+    
+  </table>
