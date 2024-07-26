@@ -23,7 +23,14 @@ export class ListContratsComponent implements OnInit{
     )
   }
   goToUpdate(contrat:Contrat){
-    this.router.navigate(['contrats/list'])
+    this.router.navigate(['contrats/update',contrat.id])
+  }
+  deleteContrat(contrat:any){
+    this.contratService.deleteContrat(contrat.id).subscribe(
+      ()=>{
+         this.refresh();
+      }
+    )
   }
   
 

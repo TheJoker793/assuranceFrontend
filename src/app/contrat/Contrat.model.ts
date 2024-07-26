@@ -11,4 +11,4 @@ export interface Contrat{
     montantQuittancePrime?:number
     dateAjoutQuittancePrime?:Date
 
-}
+} 

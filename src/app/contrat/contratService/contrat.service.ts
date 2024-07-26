@@ -24,7 +24,7 @@ export class ContratService {
     return this.http.put<Contrat>(environment.apiUrl+`Contrats/${id}`,contrat);
   }
   deleteContrat(id:number){
-    return this.http.delete(environment.apiUrl+`Contrats/id`)
+    return this.http.delete(environment.apiUrl+`Contrats/${id}`)
   }
 
 }
