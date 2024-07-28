@@ -1,0 +1,12 @@
+<h1>Mise à jour assureur</h1> 
+<form class="form-group" [formGroup]="assureurForm" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <label>Designation</label>
+        <input class="form-control" formControlName="designation">
+    </div>
+    <div class="row">
+        <label>Address</label>
+        <input class="form-control" formControlName="address">
+    </div>
+<button class="btn btn-success mt-3" type="submit">Mise à jour</button>    
+</form>

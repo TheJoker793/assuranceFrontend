@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren:()=>import('./quittanceprime/quittanceprime.module').then(qp=>qp.QuittanceprimeModule)
   },
   {
-    path:'assureur',
+    path:'assureurs',
     loadChildren:()=>import('./assureur/assureur.module').then(a=>a.AssureurModule)
   }
 ];

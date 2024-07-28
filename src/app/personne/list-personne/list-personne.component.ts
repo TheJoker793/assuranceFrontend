@@ -12,7 +12,7 @@ export class ListPersonneComponent implements OnInit {
   personnes: Personne[] = []
   constructor(private personneService: PersonneService,private router:Router) {
 
-  }
+  } 
   ngOnInit(): void {
     this.refresh()
   }
@@ -27,7 +27,11 @@ export class ListPersonneComponent implements OnInit {
 
   }
   deleteClient(personne:any){
-    this.personneService.deleteClient(personne.id)
+    this.personneService.deleteClient(personne.id).subscribe(
+      ()=>{
+        this.refresh();
+      }
+    )
   }
   goUpdate(personne:Personne){
     this.router.navigate(['personnes/update',personne.id])

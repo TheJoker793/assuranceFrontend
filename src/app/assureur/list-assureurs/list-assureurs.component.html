@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Address</th> 
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assureur of assureurs;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{assureur.designation}}</td>
+        <td>{{assureur.address}}</td>
+        <td><button class="btn" (click)="goUpdate(assureur)">Modifier</button> <button class="btn" (click)="deleteAssureur(assureur)">Supprimer</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
