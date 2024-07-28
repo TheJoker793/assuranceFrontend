@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path:'assureurs',
     loadChildren:()=>import('./assureur/assureur.module').then(a=>a.AssureurModule)
+  },
+  {
+    path:'marchandises',
+    loadChildren:()=>import('./marchandise/marchandise.module').then(m=>m.MarchandiseModule)
   }
 ];
 

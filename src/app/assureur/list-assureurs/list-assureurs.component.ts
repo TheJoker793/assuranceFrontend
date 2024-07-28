@@ -18,7 +18,6 @@ export class ListAssureursComponent implements OnInit{
   refresh(){
     this.assureurService.getAllAssureurs().subscribe((data)=>{
       this.assureurs=data;
-      console.log(this.assureurs);
       
 
     }) 
@@ -32,7 +31,6 @@ export class ListAssureursComponent implements OnInit{
         this.refresh()
       }
     )
-    console.log(assureur.id);
     
     
   }

@@ -1,0 +1,23 @@
+<h1>Liste des marchandises</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Code</th>
+        <th scope="col">Nature</th>
+        <th scope="col">Type Transport</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let marchandise of marchandises; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{marchandise.code}}</td>
+        <td>{{marchandise.nature}}</td>
+        <td>{{marchandise.libelleTypeTransport}}</td>
+        <td><button class="btn" (click)="gotoUpdate(marchandise)">Modifier</button> <button class="btn" (click)="deleteMarchandise(marchandise)" >Supprimer</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
