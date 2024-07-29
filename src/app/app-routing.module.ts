@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path:'admin',
+    loadChildren:()=>import('./admin/admin.module').then(a=>a.AdminModule)
+  },
+  {
     path:'personnes',
     loadChildren:()=>import('./personne/personne.module').then(p=>p.PersonneModule)
   },
@@ -29,6 +33,10 @@ const routes: Routes = [
   {
     path:'marchandises',
     loadChildren:()=>import('./marchandise/marchandise.module').then(m=>m.MarchandiseModule)
+  },
+  {
+    path:'sinistres',
+    loadChildren:()=>import('./sinistre/sinistre.module').then(s=>s.SinistreModule)
   }
 ];
 

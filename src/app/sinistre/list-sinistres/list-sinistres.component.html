@@ -1,0 +1,29 @@
+<h1>Liste des sinistres</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Sinistre</th>
+        <th scope="col">Date ajout </th>
+        <th scope="col">Date validation</th>
+        <th scope="col">Type</th>
+        <th scope="col">Situation</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Nom Complet</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sinistre of sinistres;let i=index ">
+        <th scope="row">{{i+1}}</th>
+        <td>{{sinistre.libelle}}</td>
+        <td>{{sinistre.dateAjout}}</td>
+        <td>{{sinistre.dateValidation}}</td>
+        <td>{{sinistre.libelleTypeSinistre}}</td>
+        <td>{{sinistre.libelleSituation}}</td>
+        <td>{{sinistre.cinPersonne}}</td>
+        <td>{{sinistre.prenomPersonne+' '+sinistre.nomPersonne}}</td>
+        <td><button class="btn" (click)="goUpdate(sinistre)">Modifier</button><button class="btn" (click)="deleteSinistre(sinistre)">Supprimer</button> </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,107 @@
+<h1>Nouvelle Sinistre</h1>
+<form [formGroup]="sinistreForm" (ngSubmit)="confirmUpdate()">
+    <h2>Informations Client</h2>
+    <div class="row">
+    
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Prenom</label>
+                <input class="form-control" formControlName="prenomPersonne">
+            </div>
+            <div class="col col-md-6">
+                <label>Nom</label>
+                <input class="form-control" formControlName="nomPersonne">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Cin</label>
+                <input class="form-control" formControlName="cinPersonne">
+            </div>
+            <div class="col col-md-6">
+                <label>Date de naissance</label>
+                <input class="form-control" formControlName="dateNaissancePersonne">
+            </div>
+        </div> 
+    
+    <div class="row">
+        <h2>Situation actuelle</h2>
+        <div class="row">
+            <label>Situation</label>
+            <select formControlName="situationId" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let situation of situations" [value]="situation.id">{{situation.libelle}}</option>
+              </select>
+        </div>
+    </div>    
+    </div>
+    <h2>Informations de sinistre</h2>
+    <div class="row">
+    <div class="col col-md-6">
+        <label>Libelle</label>
+        <input class="form-control" formControlName="libelle">
+    </div>  
+    <div class="col col-md-6">
+        <label>Reference</label>
+        <input class="form-control" formControlName="reference">
+    </div>    
+    </div>
+    <div class="row">
+        <label>Description:</label>
+        <textarea class="form-control" formControlName="description" rows="3"></textarea>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>Montant d'expertise</label>
+            <input class="form-control" type="number" formControlName="montantExpertise">
+        </div>
+        <div class="col-md-6">
+            <label>Montant d'indemniser</label>
+            <input class="form-control" type="number" formControlName="montantIndemniser">
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Date de sinistre</label>
+            <input class="form-control" type="date" formControlName="dateSinistre" >
+        </div>
+        <div class="col col-md-6">
+            <label>Date d'ajout'</label>
+            <input class="form-control" type="date" formControlName="dateAjout" >
+        </div>
+        
+    </div>
+    <div class="row">
+        <label>Degat materiel</label>
+        <textarea class="form-control" formControlName="degatMateriel" rows="3"></textarea>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Cause</label>
+            <input class="form-control" formControlName="cause">
+        </div>
+        <div class="col col-md-6">
+            <label>Lieu</label>
+            <input class="form-control" formControlName="lieux">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Objet</label>
+            <input class="form-control" formControlName="objet">
+        </div>
+        <div class="col col-md-6">
+            <label>Date de validation</label>
+            <input class="form-control" type="date" formControlName="dateValidation">
+        </div>
+    </div> 
+    <div class="row">
+        <select class="form-select" formControlName="typeSinistreId" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option *ngFor="let type of types" [value]="type.id">{{type.libelle}}</option>
+          </select>
+
+    </div>
+    <button class="btn btn-success" type="submit">Modifier</button>
+</form>

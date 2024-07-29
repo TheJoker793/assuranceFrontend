@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateCompteComponent implements OnInit {
   compteId!:number;
-  compteForm!:FormGroup;
+  compteForm!:FormGroup; 
     constructor(private compteService:CompteService,
       private activatedRoute:ActivatedRoute,
     private router:Router,

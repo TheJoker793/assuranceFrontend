@@ -39,9 +39,11 @@ export class AddPersonneComponent implements OnInit{
     )
   }
   addPersonne(){
+    console.log(this.personneForm.value);
+    
     this.personneService.addClient(this.personneForm.value).subscribe(
       ()=>{
-        this.router.navigate(['personnes/list'])
+        this.router.navigate(['personnes/'])
       }
     )
   }
