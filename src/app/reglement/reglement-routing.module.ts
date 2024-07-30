@@ -13,6 +13,10 @@ const routes: Routes = [
     component:MainReglementComponent,
     children:[
       {
+        path:'compteBancaires',
+        loadChildren:()=>import('../reglement/comptebancaire/comptebancaire.module').then(cb=>cb.ComptebancaireModule)
+      },
+      {
         path:'list',
         component:AllReglementsComponent
       },

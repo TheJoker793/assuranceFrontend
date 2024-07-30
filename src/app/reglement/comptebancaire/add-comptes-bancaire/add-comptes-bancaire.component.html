@@ -1,0 +1,18 @@
+<h1>Nouveau compte bancaire</h1>
+<form class="form-group" [formGroup]="cbForm" (ngSubmit)="addCompte()">
+    <div class="row">
+        <div class="col col-md-4">
+            <label>Libelle</label>
+            <input class="form-control" formControlName="libelle">
+        </div>
+        <div class="col col-md-4">
+            <label>Rib</label>
+            <input class="form-control" formControlName="rib">
+        </div>
+        <div class="col col-md-4">
+            <label>Clé</label>
+            <input class="form-control" formControlName="cle">
+        </div>
+    </div>
+    <button class="btn btn-success mt-3" type="submit" >Ajouter</button>
+</form>

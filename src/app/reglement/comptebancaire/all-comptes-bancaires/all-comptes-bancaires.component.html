@@ -1,0 +1,23 @@
+<h1>Liste des comptes bancaires</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Rib</th>
+        <th scope="col">Clé</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cb of comptes;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{cb.libelle}}</td>
+        <td>{{cb.rib}}</td>
+        <td>{{cb.cle}}</td>
+        <td><button class="btn" (click)="goUpdate(cb)">Modifier</button> <button class="btn" (click)="deleteCompte(cb)">Supprimer</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
