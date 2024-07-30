@@ -1,0 +1,36 @@
+<h1>Liste des reglements</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Numero</th>
+        <th scope="col">Date de remise</th>
+        <th scope="col">Situation</th>
+        <th scope="col">Compte bancaire</th>
+        <th scope="col">Type de reglement</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Client</th>
+        <th scope="col">Actions </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reglement of reglements;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{reglement.numero}}</td>
+        <td>{{reglement.dateRemise}}</td>
+        <td>{{reglement.libelleSituation}}</td>
+        <td>{{reglement.libelleCompteBancaire}}</td>
+        <td>{{reglement.libelleTypeReglement}}</td>
+        <td>{{reglement.cinPersonne}}</td>
+        <td>{{reglement.prenomPersonne+' '+reglement.nomPersonne}}</td>
+
+
+
+
+
+
+        <td><button class="btn" (click)="goUpdate(reglement)">modifier</button> <button class="btn"(click)="deleteReglement(reglement)">supprimer</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

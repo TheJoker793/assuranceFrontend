@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path:'sinistres',
     loadChildren:()=>import('./sinistre/sinistre.module').then(s=>s.SinistreModule)
+  },
+  {
+    path:'reglements',
+    loadChildren:()=>import('./reglement/reglement.module').then(r=>r.ReglementModule)
   }
 ];
 

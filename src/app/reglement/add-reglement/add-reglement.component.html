@@ -1,0 +1,82 @@
+<h1>Nouveau reglemen</h1>
+
+<form [formGroup]="reglementForm" class="form-group" (ngSubmit)="ajouterReglement()">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Numero</label>
+            <input class="form-control" formControlName="numero">
+        </div>
+        <div class="col col-md-6">
+            <label>Date de remise</label>
+            <input class="form-control" type="date" formControlName="dateRemise">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Situation</label>
+            <select class="form-select" formControlName="situationId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let s of situations" [value]="s.id">{{s.libelle}}</option>
+                
+              </select>
+        </div>
+        <div class="col col-md-6">
+            <label>Type de reglement</label>
+            <select class="form-select" formControlName="typeReglementId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let t of types" [value]="t.id">{{t.libelle}}</option>
+               
+              </select>
+
+        </div>
+    </div>
+    <form [formGroup]="personneForm" class="form-group">
+        <h2>Informations client</h2>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Id</label>
+                <input class="form-control" id="id" (change)="onChangePersonne($event)" >
+            </div>
+            <div class="col col-md-6">
+                <label>Cin</label>
+                <input class="form-control" formControlName="cin" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Prenom</label>
+                <input class="form-control" formControlName="prenom">
+            </div>
+            <div class="col col-md-6">
+                <label>Nom</label>
+                <input class="form-control" formControlName="nom">
+            </div>
+        </div>
+
+    </form>
+    <form [formGroup]="compteBancaireForm" class="form-group">
+        <h2>Compte bancaire</h2>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Id</label>
+                <input class="form-control" id="compteancaireId" (change)="onChangeCompteBancaire($event)">
+            </div>
+            <div class="col col-md-6">
+                <label>Libelle</label>
+                <input class="form-control" formControlName="libelle">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Rib</label>
+                <input class="form-control" formControlName="rib">
+            </div><div class="col col-md-6">
+                <label>Cle</label>
+                <input class="form-control" formControlName="cle">
+            </div>
+        </div>
+
+    </form>
+
+    <button class="btn btn-success mt-3">Ajouter</button>
+</form>

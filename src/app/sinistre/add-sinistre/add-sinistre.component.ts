@@ -109,7 +109,7 @@ export class AddSinistreComponent implements OnInit{
       })
      } 
     )
-  }
+  } 
  onchangePersonne(event:any){
   this.personneId=event.target.value;
   
