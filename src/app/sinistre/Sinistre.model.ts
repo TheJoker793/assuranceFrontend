@@ -27,4 +27,14 @@ export interface Sinistre{
     dateNaissancePersonne?:Date
 
 
+};
+export interface Dossier{
+    id?:number,
+    libelle:string,
+    reference:string,
+    dateDeclaration:Date,
+    motif:string,
+    dateAjout:Date,
+    montantExpertise:number,
+    montantIdemniser:number
 }

@@ -12,6 +12,14 @@ const routes: Routes = [
     component:MainSinistreComponent,
     children:[
       {
+        path:'dossiers',
+        loadChildren:()=>import('../sinistre/dossier/dossier.module').then(d=>d.DossierModule)
+      },
+      {
+        path:'items',
+        loadChildren:()=>import('../sinistre/sinistreitem/sinistreitem.module').then(si=>si.SinistreitemModule)
+      },
+      {
         path:'list',
         component:ListSinistresComponent
       },

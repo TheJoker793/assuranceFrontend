@@ -1,0 +1,30 @@
+<h1>Modifier nouveau bien </h1>
+<form [formGroup]="bienForm" class="form-group" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Code</label>
+            <input class="form-control" formControlName="code">
+        </div>
+        <div class="col col-md-6">
+            <label>Date acquisation</label>
+            <input class="form-control" type="date" formControlName="daeAcquisation">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Type bien</label>
+            <select class="form-select" formControlName="typeBienId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let type of types" [value]="type.id">{{type.libelle}}</option>
+              </select>
+        </div>
+        <div class="col col-md-6">
+            <label>Structure</label>
+            <select class="form-select" formControlName="structureId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let struct of structures" [value]="struct.id">{{struct.libelle}}</option>
+              </select>
+        </div>
+    </div>
+    <button class="btn btn-success mt-3" type="submit">Modifier</button>
+</form>

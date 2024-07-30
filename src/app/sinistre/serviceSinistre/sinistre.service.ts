@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Sinistre, TypeSinistre } from '../Sinistre.model';
+import { Dossier, Sinistre, TypeSinistre } from '../Sinistre.model';
 import { environment } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 
@@ -35,5 +35,20 @@ export class SinistreService {
   }
   deleteTypeSinistre(id:number){
     return this.http.delete(environment.apiUrl+'TypeSinistres/'+id)
+  };
+  getAllDossiers():Observable<Dossier[]>{
+    return this.http.get<Dossier[]>(environment.apiUrl+'Dossiers');
+  }
+  getDossierById(id:number):Observable<Dossier>{
+    return this.http.get<Dossier>(environment.apiUrl+'Dossiers/'+id);
+  }
+  AddDossier(dossier:Dossier):Observable<Dossier>{
+    return this.http.post<Dossier>(environment.apiUrl+'Dossiers',dossier);
+  }
+  updateDossier(id:number,dossier:Dossier):Observable<Dossier>{
+    return this.http.put<Dossier>(environment.apiUrl+'Dossiers/'+id,dossier);
+  }
+  deleteDossier(id:number):Observable<Dossier>{
+    return this.http.delete<Dossier>(environment.apiUrl+'Dossiers/'+id);
   }
 }

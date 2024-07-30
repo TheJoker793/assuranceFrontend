@@ -1,0 +1,43 @@
+<h1>Nouveau dossier</h1>
+<form [formGroup]="dossierForm" class="form-group" (ngSubmit)="addDossier()">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Libelle</label>
+            <input class="form-control" formControlName="libelle">
+        </div>    
+        <div class="col col-md-6">
+            <label>Reference</label>
+            <input class="form-control" formControlName="reference">
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Date de declaration</label>
+            <input class="form-control" formControlName="dateDeclaration" type="date">
+        </div>
+        <div class="col col-md-6">
+            <label>Date d'ajout</label>
+            <input class="form-control" formControlName="dateAjout" type="date">
+        </div>
+        
+    </div>
+    <div class="row mt-3">
+        <div class="form-floating">
+            <textarea class="form-control" formControlName="motif" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Motifs</label>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Montant expertise</label>
+            <input type="number" class="form-control" formControlName="montantExpertise">
+        </div>
+        <div class="col col-md-6">
+            <label>Montant Idemniser</label>
+            <input type="number" class="form-control" formControlName="montantIdemniser">
+
+
+        </div>
+    </div>
+    <button class="btn btn-success mt-3" type="submit">Ajouter</button>
+</form>

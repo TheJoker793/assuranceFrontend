@@ -1,1 +1,79 @@
-<p>update-reglement works!</p>
+<h1>Mettre à jour le reglemen</h1>
+
+<form [formGroup]="reglementForm" class="form-group" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Numero</label>
+            <input class="form-control" formControlName="numero">
+        </div>
+        <div class="col col-md-6">
+            <label>Date de remise</label>
+            <input class="form-control" type="date" formControlName="dateRemise">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Situation</label>
+            <select class="form-select" formControlName="situationId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let s of situations" [value]="s.id">{{s.libelle}}</option>
+                
+              </select>
+        </div>
+        <div class="col col-md-6">
+            <label>Type de reglement</label>
+            <select class="form-select" formControlName="typeReglementId" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let t of types" [value]="t.id">{{t.libelle}}</option>
+               
+              </select>
+
+        </div>
+    </div>
+        <h2>Informations client</h2>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Id</label>
+                <input class="form-control" formControlName="personneId" >
+            </div>
+            <div class="col col-md-6">
+                <label>Cin</label>
+                <input class="form-control" formControlName="cinPersonne" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Prenom</label>
+                <input class="form-control" formControlName="prenomPersonne">
+            </div>
+            <div class="col col-md-6">
+                <label>Nom</label>
+                <input class="form-control" formControlName="nomPersonne">
+            </div>
+        </div>
+
+    
+        <h2>Compte bancaire</h2>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Id</label>
+                <input class="form-control" formControlName="compteBancaireId" >
+            </div>
+            <div class="col col-md-6">
+                <label>Libelle</label>
+                <input class="form-control" formControlName="libelleCompteBancaire">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Rib</label>
+                <input class="form-control" formControlName="ribCompteBancaire">
+            </div><div class="col col-md-6">
+                <label>Cle</label>
+                <input class="form-control" formControlName="cleCompteBancaire">
+            </div>
+        </div>
+
+
+    <button class="btn btn-success mt-3" type="submit">Mettre à jour</button>
+</form>

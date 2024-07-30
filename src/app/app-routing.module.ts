@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path:'reglements',
     loadChildren:()=>import('./reglement/reglement.module').then(r=>r.ReglementModule)
+  },
+  {
+    path:'biens',
+    loadChildren:()=>import('./bien/bien.module').then(b=>b.BienModule)
   }
 ];
 

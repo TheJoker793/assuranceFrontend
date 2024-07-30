@@ -1,0 +1,30 @@
+<h1>Dossiers</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Reference</th>
+        <th scope="col">Date de declaration</th>
+        <th scope="col">Motif</th>
+        <th scope="col">Date d'ajout'</th>
+        <th scope="col">Montant expertise</th>
+        <th scope="col">Montant Idemniser</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dossier of dossiers;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{dossier.libelle}}</td>
+        <td>{{dossier.reference}}</td>
+        <td>{{dossier.dateDeclaration}} </td>
+        <td>{{dossier.motif}} </td>
+        <td>{{dossier.dateAjout}} </td>
+        <td>{{dossier.montantExpertise}} </td>
+        <td>{{dossier.montantIdemniser}} </td>
+        <td><button class="btn" (click)="goUpdate(dossier)">modifier</button> <button class="btn" (click)="deleteDossier(dossier)">Supprimer</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
