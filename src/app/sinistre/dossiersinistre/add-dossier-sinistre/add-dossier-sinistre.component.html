@@ -1,0 +1,129 @@
+<h1>Nouveau dossier sinistre</h1>
+<form [formGroup]="formDossierSinistre" (ngSubmit)="addDossierSinistre()">
+    <div class="row">
+        <div class="col col-md-4">
+            <label>Date d'ajout</label>
+            <input class="form-control" formControlName="dateAjout" type="date">
+        </div>
+        <div class="col col-md-4">
+            <label>Montant assurance</label>
+            <input class="form-control" formControlName="montantAssurance" type="number">
+        </div>
+        <div class="col col-md-4">
+            <label>Montant sinistre</label>
+            <input class="form-control" formControlName="montantSinistre" type="number">
+        </div>
+    </div>
+    <div class="row">
+        <label for="obs" class="form-label">Observation</label>
+  <textarea class="form-control" id="obs" formControlName="observation" rows="3"></textarea>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <h1>Information dossier</h1>
+            <label>Id dossier</label>
+            <input class="form-control" id="dossierId" (change)="onChangeDossier($event)">
+        </div>
+    </div>
+    <form [formGroup]="formDossier" class="form-group">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Libelle</label>
+                <input class="form-control" formControlName="libelle">
+            </div>
+            <div class="col col-md-6">
+                <label>Date de declaration</label>
+                <input class="form-control" formControlName="dateDeclaration">
+            </div>
+        </div>
+        <div class="row">
+            <label for="motif" class="form-label">Motif</label>
+  <textarea class="form-control" formControlName="motif" id="motif" rows="3"></textarea>
+        </div>
+        <div class="row">
+            <div class="col col-md-4">
+                <label>Date d'ajout</label>
+                <input class="form-control" type="date" formControlName="dateAjout">
+            </div>
+            <div class="col col-md-4">
+                <label>Montant d'expertise</label>
+                <input class="form-control" type="number" formControlName="montantExpertise"> 
+            </div>
+            <div class="col col-md-4">
+                <label>Montant d'Idemniser</label>
+                <input class="form-control" type="number" formControlName="montantIdemniser">  
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row">
+        <div class="col col-md-6">
+            <h1>Information sinistre</h1>
+            <label>Id sinistre</label>
+            <input class="form-control" id="sinistreId" (change)="onChangeSinistre($event)">
+        </div>
+    </div>
+    <form [formGroup]="formSinistre" class="form-group">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Libelle</label>
+                <input class="form-control" formControlName="libelle">
+            </div>
+            <div class="col col-md-6">
+                <label>Referece</label>
+                <input class="form-control" formControlName="reference">
+            </div>
+        </div>
+        <div class="row">
+            <label for="desc" class="form-label">Description</label>
+  <textarea class="form-control" id="desc" formControlName="description" rows="3"></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Montant d'expertise</label>
+                <input class="form-control" type="number" formControlName="montantExpertise">
+            </div>
+            <div class="col col-md-6">
+                <label>Montant d'indemniser</label>
+                <input class="form-control" type="number" formControlName="montantIndemniser">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Date de sinistre</label>
+                <input class="form-control" type="date" formControlName="dateSinistre">
+            </div>
+            <div class="col col-md-6">
+                <label>Date d'ajout</label>
+                <input class="form-control" type="date" formControlName="dateAjout">
+            </div>
+        </div>
+        <div class="row">
+            <label for="desc" class="form-label">Degat materiel</label>
+            <textarea class="form-control" id="desc" formControlName="degatMateriel" rows="3"></textarea>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Cause</label>
+                <input class="form-control" formControlName="cause">
+            </div>
+            <div class="col col-md-6">
+                <label>Lieux</label>
+                <input class="form-control" formControlName="lieux">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Objet</label>
+                <input class="form-control" formControlName="objet">
+            </div>
+            <div class="col col-md-6">
+                <label>Date de validation</label>
+                <input class="form-control" type="date" formControlName="dateValidation">
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-success mt-3">Ajouter</button>
+</form>

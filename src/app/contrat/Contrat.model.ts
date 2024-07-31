@@ -12,3 +12,7 @@ export interface Contrat{
     dateAjoutQuittancePrime?:Date
 
 } 
+export interface NatureContrat{
+    id?:number,
+    libelle:string
+}

@@ -9,6 +9,7 @@ import { AddContratComponent } from './add-contrat/add-contrat.component';
 import { UpdateContratComponent } from './update-contrat/update-contrat.component';
 import { DetailContratComponent } from './detail-contrat/detail-contrat.component';
 import { DashboardContratComponent } from './dashboard-contrat/dashboard-contrat.component';
+import { NatureContratComponent } from './nature-contrat/nature-contrat.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DashboardContratComponent } from './dashboard-contrat/dashboard-contrat
     AddContratComponent,
     UpdateContratComponent,
     DetailContratComponent,
-    DashboardContratComponent
+    DashboardContratComponent,
+    NatureContratComponent
   ],
   imports: [
     CommonModule,

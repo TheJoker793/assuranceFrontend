@@ -6,6 +6,7 @@ import { AddContratComponent } from './add-contrat/add-contrat.component';
 import { DashboardContratComponent } from './dashboard-contrat/dashboard-contrat.component';
 import { UpdateContratComponent } from './update-contrat/update-contrat.component';
 import { DetailContratComponent } from './detail-contrat/detail-contrat.component';
+import { NatureContratComponent } from './nature-contrat/nature-contrat.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path:'dashboard',
         component:DashboardContratComponent
+      },
+      {
+        path:'natures',
+        component:NatureContratComponent
       },
       {
         path:'update/:id',

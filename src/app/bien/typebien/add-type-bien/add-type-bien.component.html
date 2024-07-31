@@ -1,1 +1,15 @@
-<p>add-type-bien works!</p>
+<h1>Nouveau type de bien</h1>
+<form [formGroup]="typeForm" (ngSubmit)="addNewType()">
+    <div class="row mb-3">
+        <div class="col col-md-6">
+            <label>Libelle</label>
+            <input class="form-control" formControlName="libelle">
+        </div>
+        <div class="col col-md-6">
+            <label>Durée de vie</label>
+            <input class="form-control" type="number" formControlName="dureeVie">
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit">Ajouter</button>
+
+</form> 

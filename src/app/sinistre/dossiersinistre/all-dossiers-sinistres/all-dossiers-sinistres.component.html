@@ -1,0 +1,37 @@
+<h1>Liste des dossier sinistre</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Date d'ajout</th>
+        <th scope="col">Montant d'assurance</th>
+        <th scope="col">Montant de sinistre</th>
+        <th scope="col">Sinistre</th>
+        <th scope="col">Reference sinistre</th>
+        <th scope="col">Dossier </th>
+        <th scope="col">Date de declaration Dossier </th>
+        <th scope="col">Actions </th>
+
+
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ds of dossierSinistres;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ds.dateAjout}}</td>
+        <td>{{ds.montantAssurance}}</td>
+        <td>{{ds.montantSinistre}}</td>
+        <td>{{ds.libelleSinistre}}</td>
+        <td>{{ds.referenceSinistre}}</td>
+        <td>{{ds.libelleDossier}}</td>
+        <td>{{ds.dateDeclarationDossiser}}</td>
+        <td><button class="btn" (click)="goUpdate(ds)">Modifier</button> <button class="btn" (click)="deleteDs(ds)">Supprimer</button></td>
+
+
+
+      </tr>
+      
+    </tbody>
+  </table>

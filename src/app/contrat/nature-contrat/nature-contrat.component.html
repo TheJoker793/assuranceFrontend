@@ -1,0 +1,30 @@
+<h1>Gestion des natures contrats</h1>
+<hr>
+<form [formGroup]="natureForm" class="form-group" (ngSubmit)="addNature()">
+    <div class="row mb-3">
+        <div class="col col-md-6">
+            <label>Libelle</label>
+            <input formControlName="libelle" class="form-control">
+        </div>
+        
+    </div>
+    <button type="submit" class="btn ">Ajouter</button>
+</form>
+<h2>Liste des contrats </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nat of natures;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{nat.libelle}}</td>
+        <td><button class="btn" (click)="deleteNature(nat)">Supprimer</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

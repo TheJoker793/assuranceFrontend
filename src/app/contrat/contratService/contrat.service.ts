@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Contrat } from '../Contrat.model';
+import { Contrat, NatureContrat } from '../Contrat.model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -25,6 +25,16 @@ export class ContratService {
   }
   deleteContrat(id:number){
     return this.http.delete(environment.apiUrl+`Contrats/${id}`)
+  }
+  allNatureContrats():Observable<NatureContrat[]>{
+    return this.http.get<NatureContrat[]>(environment.apiUrl+'NatureContrats')
+  }
+  addNature(newNature:NatureContrat):Observable<NatureContrat>{
+    return this.http.post<NatureContrat>(environment.apiUrl+'NatureContrats',newNature)
+  }
+  deleteNature(id:number){
+    
+    return this.http.delete<NatureContrat>(environment.apiUrl+'NatureContrats/'+id)
   }
 
 }

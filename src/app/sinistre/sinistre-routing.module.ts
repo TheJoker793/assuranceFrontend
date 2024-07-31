@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren:()=>import('../sinistre/dossier/dossier.module').then(d=>d.DossierModule)
       },
       {
+        path:'dossierSinitres',
+        loadChildren:()=>import('../sinistre/dossiersinistre/dossiersinistre.module').then(ds=>ds.DossiersinistreModule)
+      },
+      {
         path:'items',
         loadChildren:()=>import('../sinistre/sinistreitem/sinistreitem.module').then(si=>si.SinistreitemModule)
       },

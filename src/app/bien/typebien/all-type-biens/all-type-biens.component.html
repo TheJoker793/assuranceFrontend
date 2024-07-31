@@ -1,1 +1,20 @@
-<p>all-type-biens works!</p>
+<h1>Liste des types du biens</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Duréé de vie</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let type of types;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{type.libelle}}</td>
+        <td>{{type.dureeVie}}</td>
+        <td><button class="btn" (click)="goUpdate(type)">Modifier</button><button class="btn" (click)="deleteType(type)">Supprimer</button> </td>
+      </tr>
+ 
+    </tbody>
+  </table> 

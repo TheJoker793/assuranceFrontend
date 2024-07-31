@@ -38,3 +38,37 @@ export interface Dossier{
     montantExpertise:number,
     montantIdemniser:number
 }
+export interface DossierSinistre{
+    //**dossier sinistre */ 
+    id?:number;
+    dateAjout:Date,
+    montantAssurance:number,
+    montantSinistre:number,
+    observation:string,
+    //**sinistre */
+    sinistreId?: number,
+    libelleSinistre?: string,
+    referenceSinistre?: string,
+    descriptionSinistre?: string,
+    montantExpertiseSinistre?:number,
+    montantIndemniserSinistre?: number,
+    dateSinistre?:Date,
+    dateAjoutSinistre?:Date,
+    degatMaterielSinistre?: string,
+    causeSinistre?:string,
+    lieuSinistre?:string,
+    objetSinistre?:string,
+    dateValidationSinistre?:Date,
+        //**dossier sinistre */
+    dossierId?: number,
+    libelleDossier?: string,
+    referenceDossiser?: string,
+    dateDeclarationDossiser?:Date,
+    motifDossier?: string,
+    dateAjoutDossier?:Date,
+    montantExpertiseDossier?: number,
+    montantIdemniserDossier?: number
+
+
+
+}
