@@ -46,7 +46,7 @@ export interface DossierSinistre{
     montantSinistre:number,
     observation:string,
     //**sinistre */
-    sinistreId?: number,
+    sinistreId: number,
     libelleSinistre?: string,
     referenceSinistre?: string,
     descriptionSinistre?: string,
@@ -60,7 +60,7 @@ export interface DossierSinistre{
     objetSinistre?:string,
     dateValidationSinistre?:Date,
         //**dossier sinistre */
-    dossierId?: number,
+    dossierId: number,
     libelleDossier?: string,
     referenceDossiser?: string,
     dateDeclarationDossiser?:Date,
