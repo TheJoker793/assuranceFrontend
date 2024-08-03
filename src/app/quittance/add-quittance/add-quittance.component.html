@@ -1,0 +1,77 @@
+<h1>Ajouter nouveau quittance</h1>
+<form [formGroup]="quittanceForm" (ngSubmit)="ajouterQuittance()" class="form-group">
+<div class="row">
+    <div class="col col-md-6">
+        <label>Libelle</label>
+        <input class="form-control" formControlName="libelle">
+    </div>
+    <div class="col col-md-6">
+        <label>Montant</label>
+        <input class="form-control" formControlName="montant" type="number">
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-6">
+        <label>Date d'ajout</label>
+        <input class="form-control" type="date" formControlName="dateAjout">
+    </div>
+    <div class="col col-md-6">
+        <label>Date de signature</label>
+        <input class="form-control" type="date" formControlName="dateSignature">
+    </div>
+</div>
+<div class="row">
+    <label>Selectionner le devise</label>
+    <select class="form-select" formControlName="devisId" aria-label="Disabled select example" >
+        <option selected>Open this select menu</option>
+        <option *ngFor="let d of devises" [value]="d.id">{{d.libelle}}</option>
+      </select>
+</div>
+<h2>Informations Assureurs</h2>
+<div class="row">
+    <div class="col col-md-6">
+        <label>ID assureur</label>
+        <input class="form-control" id="assureurId" (change)="onChangeAssureur($event)">
+    </div>
+</div>
+<form [formGroup]="assureurForm" class="form-group">
+    <div class="row">
+        <div class="col col-md-6">
+            <label>designation</label>
+            <input class="form-control" formControlName="designation">
+        </div>
+        <div class="col col-md-6">
+            <label>Address</label>
+            <input class="form-control" formControlName="address">
+        </div>
+    </div>
+</form>
+<h2>Informations dossier sinistre</h2>
+<div class="row">
+    <div class="col col-md-6">
+        <label>ID Dossier sinistre</label>
+        <input class="form-control" id="dossierSinistreId" (change)="onChangeDossierSinistre($event)">
+    </div>
+</div>
+<form [formGroup]="dossierSinistreForm" class="form-group">
+    <div class="row">
+        <div class="col col-md-4">
+            <label>Date d'ajout</label>
+            <input class="form-control" formControlName="dateAjout" type="date">
+        </div>
+        <div class="col col-md-4">
+            <label>Montant assurance</label>
+            <input class="form-control" formControlName="montantAssurance" type="number">
+        </div>
+        <div class="col col-md-4">
+            <label>Montant sinistre</label>
+            <input class="form-control" formControlName="montantSinistre" type="number">
+        </div>
+    </div>
+    <div class="row">
+        <label>Observation</label>
+        <input class="form-control" formControlName="observation">
+    </div>
+</form>
+<button class="btn btn-success mt-3 mb-3" (click)="ajouterQuittance()">ajouter</button>
+</form>

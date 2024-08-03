@@ -1,0 +1,34 @@
+<h1>Liste des quittances</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Quittance</th>
+        <th scope="col">Date d'ajout</th>
+        <th scope="col">Date signature</th>
+        <th scope="col">Devise</th>
+        <th scope="col">Montant assurance</th>
+        <th scope="col">Montant sinistre</th>
+        <th scope="col">Assureur</th>
+        <th scope="col">Actions</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of quittances; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{q.libelle}}</td>
+        <td>{{q.dateAjout}}</td>
+        <td>{{q.dateSignature}}</td>
+        <td>{{q.libelleDevis}}</td>
+        <td>{{q.montantAssuranceDossierSinistre}}</td>
+        <td>{{q.montantSinistreDossierSinistre}}</td>
+        <td>{{q.designationAssureur}}</td>
+        <td><button class="btn" (click)="goUpdate(q)">modifier</button> <button class="btn" (click)="deleteQuittance(q)">supprimer</button></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
