@@ -1,0 +1,38 @@
+<h1>Liste des polices</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ord</th>
+        <th scope="col">Code </th>
+        <th scope="col">Date d'ajout</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Nom Complet</th>
+        <th scope="col">Assureur</th>
+        <th scope="col">Date d'effet contrat</th>
+        <th scope="col">Date d'écheance</th>
+        <th scope="col">Date de signature</th>
+        <th scope="col">Code de marchandise</th>
+        <th scope="col">Article</th>
+        <th scope="col">Type bien</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of polices;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.code}}</td>
+        <td>{{p.dateAjout}}</td>
+        <td>{{p.cinPersonne}}</td>
+        <td>{{p.prenomPersonne+' '+p.nomPersonne}}</td>
+        <td>{{p.designationAssureur}}</td>
+        <td>{{p.dateEffet}}</td>
+        <td>{{p.dateEcheance}}</td>
+        <td>{{p.dateSignature}}</td>
+        <td>{{p.codeMarchandise}}</td>
+        <td>{{p.libelleArticle}}</td>
+        <td>{{p.libelleTypeBien}}</td>
+        <td><button class="btn" (click)="goUpdate(p)" >Modifier</button><button class="btn" (click)="deletePolice(p)">Supprimer</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>

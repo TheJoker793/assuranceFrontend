@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path:'quittances',
     loadChildren:()=>import('./quittance/quittance.module').then(q=>q.QuittanceModule)
+  },
+  {
+    path:'polices',
+    loadChildren:()=>import('./police/police.module').then(p=>p.PoliceModule)
   }
 ];
 
