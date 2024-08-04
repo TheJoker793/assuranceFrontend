@@ -1,1 +1,58 @@
-<p>update-contrat works!</p>
+<h1>Mettre à jour Contrat</h1>
+<form class="form-group" [formGroup]="contratForm" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <div class="col col-md-4">
+            <label>Date Effet</label>
+            <input class="form-control" type="datetime" formControlName="dateEffet">
+        </div>
+        <div class="col col-md-4">
+            <label>Date Echeance</label>
+            <input class="form-control" type="datetime" formControlName="dateEcheance">
+        </div>
+        <div class="col col-md-4">
+            <label>Date Signature</label>
+            <input class="form-control" type="datetime" formControlName="dateSignature">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Exercice</label>
+            <input class="form-control" type="number" formControlName="exercice">
+        </div>
+        <div class="col col-md-6">
+            <label>Nature de contrat</label>
+            <select class="form-select" aria-label="Default select example" formControlName="natureContratId" >
+                <option selected>Open this select menu</option>
+                <option  *ngFor="let nature of natures" [value]="nature.id">{{nature.libelle}}</option>
+                
+              </select>        
+        </div>
+    </div>
+    <hr/>
+    <h1>Quittance prime information</h1>
+    <div class="row">
+        <div class="col col-md-6">
+            <label>Id</label>
+            <input class="form-control" formControlName="quittancePrimeId" id ="quittancePrimeId" (change)="onChangeQuittanceId($event)">
+        </div>
+    </div>
+    <form class="form-group" [formGroup]="quittancePrimeForm" >
+        
+        <div class="row">
+            <div class="col col-md-4">
+                <label>Libelle</label>
+                <input class="form-control" formControlName="libelle">
+            </div>
+            <div class="col col-md-4">
+                <label>Montant</label>
+                <input class="form-control" formControlName="montant">
+            </div>
+            <div class="col col-md-4">
+                <label>Date ajout</label>
+                <input class="form-control" formControlName="dateAjout">
+            </div>
+        </div>
+
+    </form>
+<button class="btn btn-success mt-3" type="submit">Modifier</button>
+</form>

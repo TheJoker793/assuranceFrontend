@@ -1,1 +1,147 @@
-<p>update-police works!</p>
+<h1>Nouvelle police</h1>
+<form [formGroup]="policeForm" class="form-group" (ngSubmit)="confirmUpdate()">
+    <div class="row">
+        <div class="col col-md-6"> 
+           <label>Code</label>
+           <input class="form-control" formControlName="code"> 
+        </div>
+        <div class="col col-md-6"> 
+            <label>Date d'jout</label>
+            <input class="form-control"  formControlName="dateAjout"> 
+         </div>
+    </div>
+
+    <div class="row">
+        <h2>Information personne</h2>
+        <div class="col col-md-6"> 
+           <label>Id Personne</label>
+           <input class="form-control" formControlName="personneId"  id="personneId" (change)="onchangePersonne($event)"> 
+        </div>
+    </div>
+    <form class="form-group" [formGroup]="personneForm">
+        <div class="row">
+            <div class="col col-md-4">
+                <label>Cin</label>
+                <input formControlName="cin" class="form-control" >
+            </div>
+            <div class="col col-md-4">
+                <label>Prenom</label>
+                <input formControlName="prenom" class="form-control">
+            </div>
+            <div class="col col-md-4">
+                <label>Nom</label>
+                <input formControlName="nom" class="form-control">
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <h2>Information d'assureur</h2>
+        <div class="col col-md-6"> 
+           <label>Id assureur</label>
+           <input class="form-control" formControlName="assureurId" id="assureurId" (change)="onChangeAssureur($event)"> 
+        </div>
+    </div>
+    <form class="form-group" [formGroup]="assureurForm">
+        <div class="row">
+            <div class="col col-md-">
+                <label>Designation</label>
+                <input formControlName="designation" class="form-control" >
+            </div>
+            <div class="col col-md-6">
+                <label>Address</label>
+                <input formControlName="address" class="form-control">
+            </div>
+            
+        </div>
+    </form>
+
+    <div class="row">
+        <h2>Information de contrat</h2>
+        <div class="col col-md-6"> 
+           <label>Id contrat</label>
+           <input class="form-control" formControlName="contratId" id="contratId" (change)="onChangeContrat($event)"> 
+        </div>
+    </div>
+
+    <form class="form-group" [formGroup]="contratForm">
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Date d'effet</label>
+                <input formControlName="dateEffet"  class="form-control" >
+            </div>
+            <div class="col col-md-6">
+                <label>Date d'echeance</label>
+                <input formControlName="dateEcheance"  class="form-control">
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <label>Date de signature</label>
+                <input formControlName="dateSignature"  class="form-control" >
+            </div>
+            <div class="col col-md-6">
+                <label>Exercice</label>
+                <input formControlName="exercice" type="number" class="form-control">
+            </div>
+            
+        </div>
+    </form>
+
+    <div class="row">
+        <h2>Information de marchandise</h2>
+        <div class="col col-md-6"> 
+           <label>Id Marchndise</label>
+           <input class="form-control" formControlName="marchandiseId" id="marchandiseId" (change)="onChangeMarchandise($event)"> 
+        </div>
+    </div>
+    <form class="form-group" [formGroup]="marchandiseForm">
+        <div class="row">
+            <div class="col col-md-">
+                <label>Code</label>
+                <input formControlName="code" class="form-control" >
+            </div>
+            <div class="col col-md-6">
+                <label>nature</label>
+                <input formControlName="nature" class="form-control">
+            </div>
+            
+        </div>
+    </form>
+
+    <div class="row">
+        <h2>Information d'article'</h2>
+        <div class="col col-md-6"> 
+           <label>Id Article</label>
+           <input class="form-control" formControlName="articleId" id="articleId" (change)="onChangeArticle($event)"> 
+        </div>
+    </div>
+    <form class="form-group" [formGroup]="articleForm">
+        <div class="row">
+            <div class="col col-md-4">
+                <label>Libelle</label>
+                <input formControlName="libelle" class="form-control" >
+            </div>
+            <div class="col col-md-4">
+                <label>Reference</label>
+                <input formControlName="reference" class="form-control" >
+            </div>
+            <div class="col col-md-4">
+                <label>Prix</label>
+                <input formControlName="prix" type="number" class="form-control" >
+            </div>
+            
+            
+        </div>
+    </form>
+
+    <select class="form-select mt-3" formControlName="typeBienId" aria-label="Default select example">
+        <option selected>Selectionner Type bien</option>
+        <option *ngFor="let t of types" [value]="t.id">{{t.libelle}}</option>
+        
+      </select>
+
+      <button class="btn btn-success mt-3 mb-3" type="submit">Modifier</button>
+
+</form>

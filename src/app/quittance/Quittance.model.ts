@@ -11,7 +11,7 @@ export interface Quittance{
     montantAssuranceDossierSinistre?:number,
     montantSinistreDossierSinistre?:number,
     observationDossierSinistre?:string,
-    AssureurId:number,
+    assureurId:number,
     designationAssureur?:string,
     addressAssureur?:string
     

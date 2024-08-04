@@ -84,7 +84,7 @@ export class AddQuittanceComponent implements OnInit{
           montantSinistre:new FormControl(data.montantSinistre),
           observation:new FormControl(data.observation)
         });
-        
+         
       }
     )
   }
@@ -104,7 +104,7 @@ export class AddQuittanceComponent implements OnInit{
   ajouterQuittance(){
     this.devisService.addQuittance(this.quittanceForm.value).subscribe(
       ()=>{this.router.navigate(['quittances/list'])}
-    )
+    ) 
   }
 
 }
